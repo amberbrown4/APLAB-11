@@ -8,6 +8,6 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         UserNameFrame userNameFrame = new UserNameFrame();
-        NetWork netWork = new NetWork();
+//        NetWork netWork = new NetWork();
     }
 }

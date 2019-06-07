@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class UserNameFrame extends JFrame{
 
@@ -24,7 +25,12 @@ public class UserNameFrame extends JFrame{
                 String myName= textField.getText();
                 System.out.println(myName);
                 textField.setText("");
-                ChatRoomGUI chatRoomGUI = new ChatRoomGUI(myName);
+                ChatRoomGUI chatRoomGUI = null;
+                try {
+                    chatRoomGUI = new ChatRoomGUI(myName);
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
                 chatRoomGUI.addNewParticipants(myName);
                 setVisible(false);
             }
